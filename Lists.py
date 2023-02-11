@@ -23,31 +23,33 @@ movies_name = [
 "Memoirs of a Geisha"
 ]
 
-alphabetical_order = sorted(movies_name)
-print (alphabetical_order)
+def alphabetical_order(movies_name):
+    return sorted(movies_name)
+
+print (alphabetical_order(movies_name))
 
 # Write a function won_golden_globe that takes a film name and 
 # returns True or False based on whether or not this movie won a Golden Globe.
-
-gold_globe_price = [
-"Jaws",
-"Star Wars",
-"E.T.",
-"Memoirs of a Geisha"
-]
+# gold globe prices "Jaws", "Star Wars", "E.T.", "Memoirs of a Geisha".
 
 def won_golden_globe(movies_name):
-    if movies_name in gold_globe_price:
+    if ("Jaws").lower() in movies_name.lower():
+        return True
+    if "Star Wars".lower() in movies_name.lower():
+        return True
+    if "E.T.".lower() in movies_name.lower():
+        return True
+    if  "Memoirs of a Geisha".lower() in movies_name.lower():
         return True
     else:
         return False
 
-print (won_golden_globe("Memoirs of a Geisha"))
+print (won_golden_globe("jaws"))
 
 # Write a function remove_toto_albums that takes a list of strings, 
 # removes Joseph's Toto albums from it and returns the tidy list.
 
-remove_toto_albums= [
+mixed_with_toto_albums= [
 "The Towering Inferno",
 "Jaws", 
 "Midway", 
@@ -68,10 +70,21 @@ remove_toto_albums= [
 "Old Is New"
 ]
 
-remove_toto_albums.remove("Fahrenheit")
-remove_toto_albums.remove("The Seventh One")
-remove_toto_albums.remove("Toto XX")
-remove_toto_albums.remove("Falling in Between")
-remove_toto_albums.remove("Toto XIV")
-remove_toto_albums.remove("Old Is New")
-print (remove_toto_albums)
+def remove_toto_albums (mixed_with_toto_albums):
+    if "Fahrenheit" in mixed_with_toto_albums:
+        mixed_with_toto_albums.remove("Fahrenheit")
+    if "The Seventh One" in mixed_with_toto_albums:
+        mixed_with_toto_albums.remove("The Seventh One")
+    if "Toto XX" in mixed_with_toto_albums:
+        mixed_with_toto_albums.remove("Toto XX")
+    if "Falling in Between" in mixed_with_toto_albums:
+        mixed_with_toto_albums.remove("Falling in Between")
+    if "Toto XIV" in mixed_with_toto_albums:
+        mixed_with_toto_albums.remove("Toto XIV")
+    if "Old Is New" in mixed_with_toto_albums:
+        mixed_with_toto_albums.remove("Old Is New")
+        return mixed_with_toto_albums
+    else: 
+        "Wrong input"
+
+print(remove_toto_albums(mixed_with_toto_albums))
